@@ -1,0 +1,284 @@
+# 🎆 Firework Simulator
+
+An interactive HTML5 Canvas-based fireworks animation simulator with customizable settings, real-time controls, and multiple visual effects. Click anywhere to launch spectacular fireworks displays!
+
+## ✨ Features
+
+### Core Features
+- **5 Different Shell Types**
+  - Ring: Classic circular burst pattern
+  - Burst: Random explosive dispersion
+  - Palm: Organized ring with slight spread
+  - Fountain: Upward flowing particles
+  - Sparkle: Dense glittery explosion
+
+- **Customizable Settings**
+  - Shell Size Control (Small, Medium, Large)
+  - Quality Modes (Low, Medium, High) for performance optimization
+  - Sky Lighting Effects (None, Mild, Bright)
+  - Canvas Scale Factor (0.5x to 1.5x)
+  - Adjustable particle decay rates
+
+### Interactive Controls
+- **Click/Touch to Launch** - Launch fireworks directly on canvas
+- **Auto-Fire Mode** - Automatic continuous fireworks
+- **Finale Mode** - Rapid-fire spectacular display
+- **Pause/Resume** - Control animation playback
+- **Sound Toggle** - Enable/disable audio feedback
+- **Fullscreen Support** - Immersive full-screen experience
+- **Long Exposure Mode** - Create beautiful light trails (like slow shutter photography)
+- **Hide Controls** - Minimal UI for clean display
+
+### Visual Features
+- **Particle Physics** - Gravity, air resistance, and realistic motion
+- **Glow Effects** - Shadow blur for realistic light glow
+- **Smooth Animations** - 60 FPS particle rendering
+- **Trail Effects** - Optional long exposure for light trails
+- **Responsive Design** - Works seamlessly on desktop and mobile
+
+## 🚀 Getting Started
+
+### Installation
+1. Download or clone this repository
+2. Extract files to your desired directory
+3. No build process required - just open `index.html` in a web browser!
+
+### Usage
+1. Open `index.html` in a modern web browser
+2. Click anywhere on the canvas to launch fireworks
+3. Use the control buttons at the bottom:
+   - **Pause Button** - Pause/Resume animation
+   - **Sound Button** - Toggle audio on/off
+   - **Settings Button** - Open settings menu
+
+## ⚙️ Settings Menu
+
+### Shell Type
+Select the burst pattern of your fireworks:
+- **Ring** - Particles arranged in a circular pattern
+- **Burst** - Random explosive dispersion
+- **Palm** - Organized ring with organic spread
+- **Fountain** - Upward flowing particles
+- **Sparkle** - Dense glittery effect
+
+### Shell Size
+Control the scale of explosions:
+- **Small** - Delicate, compact bursts
+- **Medium** - Balanced, standard size
+- **Large** - Massive, impressive explosions
+
+### Quality
+Optimize for performance vs visual fidelity:
+- **Low** - Fast performance (better for slower devices)
+- **Medium** - Balanced quality and performance
+- **High** - Maximum visual quality
+
+### Sky Lighting
+Add ambient lighting to the sky:
+- **None** - Pure black background
+- **Mild** - Subtle sky glow
+- **Bright** - Noticeable sky illumination
+
+### Scale
+Adjust canvas resolution:
+- **0.5x** - Lower resolution, better performance
+- **0.75x** - Balanced quality/performance
+- **1x** - Full resolution (default)
+- **1.25x** - Higher resolution quality
+- **1.5x** - Maximum resolution (requires powerful hardware)
+
+### Options
+- **Auto Fire** - Automatically launch fireworks at intervals
+- **Finale Mode** - Rapid-fire mode (requires Auto Fire enabled)
+- **Hide Controls** - Hide control buttons for clean interface
+- **Fullscreen** - Toggle fullscreen mode
+- **Open Shutter** - Enable long exposure light trails
+
+## 💻 Technical Details
+
+### Technology Stack
+- **HTML5 Canvas API** - Graphics rendering
+- **Vanilla JavaScript (ES6)** - No frameworks required
+- **CSS3** - Modern styling and animations
+- **Web Audio API** - Sound effects
+
+### Browser Support
+Works on all modern browsers supporting:
+- HTML5 Canvas
+- ES6+ JavaScript
+- CSS3 Flexbox
+- Web Audio API (for sound)
+
+**Tested on:**
+- Chrome/Chromium (all versions)
+- Firefox (all versions)
+- Safari (iOS 12+, macOS 10.14+)
+- Edge (all versions)
+
+### Performance Optimization
+- Configurable quality settings
+- Efficient particle pooling
+- RequestAnimationFrame for smooth 60 FPS
+- Optional trail rendering for long exposure
+- Responsive canvas scaling
+
+## 📁 Project Structure
+
+```
+firework-simulator/
+├── index.html          # Main HTML structure
+├── script.js           # Core animation and logic (500+ lines)
+├── style.css           # Complete styling (400+ lines)
+└── README.md           # This file
+```
+
+### File Descriptions
+
+**index.html**
+- Contains all semantic HTML structure
+- SVG spritesheet with control icons
+- Canvas elements for main rendering and trails
+- Settings menu with form controls
+- Help modal structure
+
+**script.js**
+- Particle class with physics simulation
+- Shell creation functions for 5 burst types
+- Canvas setup and rendering engine
+- Event handlers for user interactions
+- Settings management with localStorage
+- Auto-launch system
+- Sound effects using Web Audio API
+
+**style.css**
+- Complete responsive styling
+- Modern glassmorphism effects
+- Smooth animations and transitions
+- Dark theme optimized for night displays
+- Mobile-responsive breakpoints
+- Custom scrollbar styling
+
+## 🎯 Performance Tips
+
+### For Optimal Performance:
+1. **Lower Quality** if experiencing lag
+2. **Reduce Shell Size** to improve frame rates
+3. **Disable Sound** on mobile devices
+4. **Reduce Scale Factor** (0.75x or 0.5x) for slower hardware
+5. **Disable Sky Lighting** for better performance
+
+### For Best Visuals:
+1. **Set Quality to High**
+2. **Use Full Scale (1x)**
+3. **Enable Mild Sky Lighting**
+4. **Use Sparkle or Palm shell types**
+5. **Enable Long Exposure** for artistic shots
+
+## 🎨 Customization
+
+### Modify Colors
+Edit the `COLORS` array in `script.js` to change firework colors:
+```javascript
+const COLORS = [
+    { r: 255, g: 100, b: 100 },  // Red
+    { r: 100, g: 200, b: 255 },  // Blue
+    // Add more colors here
+];
+```
+
+### Add New Shell Types
+Create a new shell function and add it to `launchFirework()`:
+```javascript
+function createCustomShell(x, y, color) {
+    // Your particle creation logic here
+}
+```
+
+### Adjust Physics
+Modify gravity and resistance in `Particle.update()`:
+```javascript
+update() {
+    this.vy += 0.1; // Change gravity
+    this.vx *= 0.98; // Change air resistance
+}
+```
+
+## 🌐 Deployment
+
+### GitHub Pages (Recommended)
+1. Fork or clone this repository
+2. Go to repository settings
+3. Enable GitHub Pages from main branch
+4. Access at `https://yourusername.github.io/Firework-Simulator`
+
+### Other Hosting
+- Upload to any web server
+- Works with static hosting (Netlify, Vercel, etc.)
+- No backend required
+
+## ⌨️ Keyboard Shortcuts
+- **Spacebar** - Pause/Resume (coming soon)
+- **S** - Toggle Sound (coming soon)
+- **Esc** - Close Settings (coming soon)
+
+## 🐛 Known Issues & Limitations
+
+### Current Limitations
+- Sound effects are simple beeps (no complex audio)
+- Particles have basic physics (no wind, no complex interactions)
+- Maximum particle count limited by browser performance
+- Mobile touch may be less responsive on some devices
+
+### Browser Quirks
+- iOS Safari: May require user interaction before sound works
+- Firefox: Shadow effects might have slight performance impact
+- Edge: Fullscreen may require user permission
+
+## 🔄 Updates & Improvements
+
+### Potential Future Features
+- [ ] Custom color picker
+- [ ] Particle trail effects
+- [ ] Music sync features
+- [ ] Recording/export capability
+- [ ] Mobile app version
+- [ ] Shape patterns (hearts, stars, etc.)
+- [ ] Multi-touch support enhancements
+- [ ] WebGL rendering for better performance
+
+## 📝 License
+
+This project is open source and available for personal and educational use.
+
+## 🙏 Credits
+
+Built with passion by [Wastav Nagture](https://wastavnagture97-pixel.github.io/)
+
+### External Resources Used
+- Google Fonts (Russo One)
+- CodePen CSS Reset
+- SVG Icons (Material Design)
+
+## 💬 Feedback & Support
+
+Have suggestions or found a bug? 
+- Create an issue on GitHub
+- Check existing issues for solutions
+- Test in different browsers for compatibility
+
+## 🎉 Have Fun!
+
+Experiment with different settings combinations to create your perfect fireworks display. Each configuration creates unique visual effects!
+
+### Some Recommended Combinations:
+- **Classic Show**: Ring shells, Medium size, High quality
+- **Spectacular Finale**: Burst shells, Large size, Sparkle with finale mode
+- **Artistic Long Exposure**: Palm shells, Enable long exposure mode, Mild sky lighting
+- **High Energy**: Fountain shells, Auto fire + Finale mode enabled
+- **Minimalist**: Disable sky lighting, hide controls, 0.75x scale
+
+---
+
+**Version:** 2.0  
+**Last Updated:** 2026  
+**Status:** Active Development
